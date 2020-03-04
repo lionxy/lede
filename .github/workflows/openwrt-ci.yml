@@ -12,9 +12,9 @@ name: OpenWrt-CI
 on:
   schedule:
     - cron: 0 20 * * *
-#  push:
-#    branches: 
-#      - master
+  push:
+    branches: 
+      - master
   #     ↑↑↑ 改成你的分支名, 一般是master
  
   # release:
@@ -156,14 +156,38 @@ jobs:
 
           # 常用LuCI插件选择:
           cat >> .config <<EOF
+          CONFIG_PACKAGE_luci-app-accesscontrol=y
           CONFIG_PACKAGE_luci-app-adbyby-plus=y
           CONFIG_PACKAGE_luci-app-aria2=y
+          CONFIG_PACKAGE_luci-app-aliddns=y
+          CONFIG_PACKAGE_luci-app-arpbind=y
+          CONFIG_PACKAGE_luci-app-attendedsysupgrade=y
+          CONFIG_PACKAGE_luci-app-autoreboot=y
           CONFIG_PACKAGE_luci-app-baidupcs-web=y
+          CONFIG_PACKAGE_luci-app-commands=y
+          CONFIG_PACKAGE_luci-app-ddns=y
           CONFIG_PACKAGE_luci-app-docker=y
+          CONFIG_PACKAGE_luci-app-diag-core=y
+          CONFIG_PACKAGE_luci-app-dnscrypt-proxy=y
+          CONFIG_PACKAGE_luci-app-dnscrypt-dnsforwarder=y
+          CONFIG_PACKAGE_luci-app-dnspod=y
+          CONFIG_PACKAGE_luci-app-e2guardian=y
+          CONFIG_PACKAGE_luci-app-frpc=y
+          CONFIG_PACKAGE_luci-app-firewall=y
+          CONFIG_PACKAGE_luci-app-filetransfer=y
+          CONFIG_PACKAGE_luci-app-flowoffload=y
+          CONFIG_PACKAGE_luci-app-freifunk-policyrouting=y
           CONFIG_PACKAGE_luci-app-frpc=y
           CONFIG_PACKAGE_luci-app-hd-idle=y
+          CONFIG_PACKAGE_luci-app-guest-wifi=y
           CONFIG_PACKAGE_luci-app-kodexplorer=y
           CONFIG_PACKAGE_luci-app-minidlna=y
+          CONFIG_PACKAGE_luci-app-multiwan=y
+          CONFIG_PACKAGE_luci-app-mwan=y
+          CONFIG_PACKAGE_luci-app-mwan=y
+          CONFIG_PACKAGE_luci-app-nlbwmon=y
+          CONFIG_PACKAGE_luci-app-noddos=y
+          CONFIG_PACKAGE_luci-app-ntpc=y
           CONFIG_PACKAGE_luci-app-openvpn=y
           CONFIG_PACKAGE_luci-app-openvpn-server=y
           CONFIG_PACKAGE_luci-app-qbittorrent=y
@@ -173,12 +197,22 @@ jobs:
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
           CONFIG_PACKAGE_luci-app-ttyd=y
+          CONFIG_PACKAGE_luci-app-ramfree=y
           CONFIG_PACKAGE_luci-app-v2ray-server=y
           CONFIG_PACKAGE_luci-app-verysync=y
           CONFIG_PACKAGE_luci-app-webadmin=y
           CONFIG_PACKAGE_luci-app-wireguard=y
           CONFIG_PACKAGE_luci-app-wrtbwmon=y
+          CONFIG_PACKAGE_luci-app-sfe=y
+          CONFIG_PACKAGE_luci-app-shairplay=y
+          CONFIG_PACKAGE_luci-app-splash=y
+          CONFIG_PACKAGE_luci-app-sqm
+          CONFIG_PACKAGE_luci-app-syncdial=y
+          CONFIG_PACKAGE_luci-app-usb-printer=y
           CONFIG_PACKAGE_luci-app-koolproxyR=y
+          CONFIG_PACKAGE_luci-app-vlmcsd=y
+          CONFIG_PACKAGE_luci-app-vnstat=y
+          CONFIG_PACKAGE_luci-app-vsftpd=y
           EOF
 
           # LuCI主题:
