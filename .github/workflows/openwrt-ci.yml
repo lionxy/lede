@@ -126,6 +126,7 @@ jobs:
           # 编译UEFI固件:
           cat >> .config <<EOF
           CONFIG_EFI_IMAGES=y
+          CONFIG_VMDK_IMAGES=y
           EOF
 
           # IPv6支持:
